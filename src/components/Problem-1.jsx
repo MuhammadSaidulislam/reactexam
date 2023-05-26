@@ -3,6 +3,7 @@ import React, { useState } from "react";
 const Problem1 = () => {
   const [show, setShow] = useState("all");
   const [tableData, setTableData] = useState([]);
+  const [tableSortData, setTableSortData] = useState([]);
   const [nameValue, setNameValue] = useState("");
   const [statusValue, setStatusValue] = useState("");
 
@@ -26,14 +27,14 @@ const Problem1 = () => {
         }
       });
       console.log(sortedData);
-   
-     // setTableData([...tableData, sortedData]);
-
-      
     } else {
-      const filteredData = tableData.filter(item => item.status && item.status.toLowerCase() === val.toLowerCase());
+      const filteredData = tableData.filter(
+        (item) => item.status && item.status.toLowerCase() === val.toLowerCase()
+      );
       console.log(filteredData);
-     // setTableData([...tableData, filteredData]);
+      // let tempData=filteredData;
+      // tempData.push(filteredData)
+      // setTableData(tempData)
     }
   };
 
@@ -52,15 +53,11 @@ const Problem1 = () => {
       name: nameValue,
       status: statusValue,
     };
-
     setTableData([...tableData, newFormData]);
-
     // Reset the form inputs
     setNameValue("");
     setStatusValue("");
   };
-
-  //   filter table data
 
   return (
     <div className="container">
