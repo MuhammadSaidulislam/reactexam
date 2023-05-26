@@ -1,0 +1,11 @@
+@import "abstract/variables";
+@import 'bootstrap/scss/bootstrap.scss';
+@import "abstract/base";
+.buttonAStyle{
+    background-color: '#46139f';
+    color: 'white';
+    padding: '8px 16px';
+    border: 'none';
+    border-radius: '4px';
+    margin: 5px
+}
